@@ -3,6 +3,8 @@ export interface WPBlock {
         dimRatio?: number;
         id?: number;
         url?: string;
+        align?: string;
+        fontSize?: string;
     };
     blockName:
         | "core/paragraph"

@@ -1,5 +1,5 @@
 import { WPBlock } from "@/types";
-import Block from ".";
+import { mapInnerBlocks } from "@/utils/block";
 
 interface Props {
     block: WPBlock;
@@ -8,11 +8,13 @@ interface Props {
 export default function CoverBlock({ block }: Props) {
     const imgUrl = block.attrs?.url;
     const { innerBlocks } = block;
+
     return (
-        <div className="w-full" style={{ backgroundImage: `url(${imgUrl})` }}>
-            {innerBlocks?.map((innerBlock: WPBlock, i: number) => (
-                <Block key={i} block={innerBlock} />
-            ))}
+        <div
+            className="w-full h-50v bg-cover flex flex-col justify-center"
+            style={{ backgroundImage: `url(${imgUrl})` }}
+        >
+            {mapInnerBlocks(innerBlocks)}
         </div>
     );
 }

@@ -1,12 +1,13 @@
 import { WPBlock } from "@/types";
 import MediaTextBlock from "./MediaTextBlock";
 import CoverBlock from "./CoverBlock";
+import ParagraphBlock from "./ParagraphBlock";
 
 interface Props {
     block: WPBlock;
 }
 
-const BlockSwitch = ({ block }: Props) => {
+export default function Block({ block }: Props) {
     switch (block.blockName) {
         case "core/cover": {
             return <CoverBlock block={block} />;
@@ -21,7 +22,7 @@ const BlockSwitch = ({ block }: Props) => {
             return <>list</>;
         }
         case "core/paragraph": {
-            return <>paragraph</>;
+            return <ParagraphBlock block={block} />;
         }
         case "core/quote": {
             return <>quote</>;
@@ -30,12 +31,4 @@ const BlockSwitch = ({ block }: Props) => {
             return <MediaTextBlock block={block} />;
         }
     }
-};
-
-export default function Block({ block }: Props) {
-    return (
-        <div className="w-full">
-            <BlockSwitch block={block} />
-        </div>
-    );
 }
