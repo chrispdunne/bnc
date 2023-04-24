@@ -10,7 +10,7 @@ export default function CoverBlock({ block }: Props) {
     const { innerBlocks } = block;
     return (
         <div className="w-full" style={{ backgroundImage: `url(${imgUrl})` }}>
-            {innerBlocks.map((innerBlock: WPBlock, i: number) => (
+            {innerBlocks?.map((innerBlock: WPBlock, i: number) => (
                 <Block key={i} block={innerBlock} />
             ))}
         </div>

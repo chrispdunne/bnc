@@ -16,7 +16,7 @@ export default function Header({ menu, siteInfo }: Props) {
                 height={108}
             />
             <nav>
-                {menu.items.map((item) => (
+                {menu.items?.map((item) => (
                     <a
                         className="uppercase text-sm font-semibold px-3"
                         key={item.title}

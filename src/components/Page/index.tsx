@@ -23,7 +23,7 @@ export default function Page({ page, menu, siteInfo }: Props) {
             >
                 {page?.blocks
                     ?.filter((block: WPBlock) => block.blockName != null)
-                    .map((block: WPBlock, i: number) => (
+                    ?.map((block: WPBlock, i: number) => (
                         <Block key={i} block={block} />
                     ))}
             </main>
