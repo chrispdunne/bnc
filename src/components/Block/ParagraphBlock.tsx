@@ -3,9 +3,10 @@ import DOMPurify from "isomorphic-dompurify";
 
 interface Props {
     block: WPBlock;
+    index: number;
 }
 
-export default function ParagraphBlock({ block }: Props) {
+export default function ParagraphBlock({ block, index }: Props) {
     return (
         <>
             {block?.innerContent?.map((content, i) => (

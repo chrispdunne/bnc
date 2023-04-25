@@ -5,12 +5,13 @@ import ParagraphBlock from "./ParagraphBlock";
 
 interface Props {
     block: WPBlock;
+    index: number;
 }
 
-export default function Block({ block }: Props) {
+export default function Block({ block, index }: Props) {
     switch (block.blockName) {
         case "core/cover": {
-            return <CoverBlock block={block} />;
+            return <CoverBlock block={block} index={index} />;
         }
         case "core/embed": {
             return <>embed</>;
@@ -22,13 +23,13 @@ export default function Block({ block }: Props) {
             return <>list</>;
         }
         case "core/paragraph": {
-            return <ParagraphBlock block={block} />;
+            return <ParagraphBlock block={block} index={index} />;
         }
         case "core/quote": {
             return <>quote</>;
         }
         case "core/media-text": {
-            return <MediaTextBlock block={block} />;
+            return <MediaTextBlock block={block} index={index} />;
         }
     }
 }

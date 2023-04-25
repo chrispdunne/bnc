@@ -2,9 +2,9 @@ import Block from "@/components/Block";
 import { WPBlock } from "@/types";
 import DOMPurify from "isomorphic-dompurify";
 
-export function mapInnerBlocks(innerBlocks?: WPBlock[]) {
+export function mapInnerBlocks(index: number, innerBlocks?: WPBlock[]) {
     return innerBlocks?.map((innerBlock: WPBlock, i: number) => (
-        <Block key={i} block={innerBlock} />
+        <Block key={i} block={innerBlock} index={index} />
     ));
 }
 

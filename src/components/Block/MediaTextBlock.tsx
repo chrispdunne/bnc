@@ -3,13 +3,14 @@ import { mapInnerBlocks, mapInnerContent } from "@/utils/block";
 
 interface Props {
     block: WPBlock;
+    index: number;
 }
 
-export default function MediaTextBlock({ block }: Props) {
+export default function MediaTextBlock({ block, index }: Props) {
     return (
         <>
             {mapInnerContent(block.innerContent)}
-            {mapInnerBlocks(block.innerBlocks)}
+            {mapInnerBlocks(index, block.innerBlocks)}
         </>
     );
 }
