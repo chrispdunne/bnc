@@ -1,8 +1,8 @@
 import Page from "@/components/Page";
 import { SiteInfo, WPBlock, WPMenu } from "@/types";
-import { Inter } from "next/font/google";
+// import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+// const quilin = localFont({ src: "./quilin.woff2", variable: "--font-quilin" });
 
 interface Props {
     homePage: {
@@ -13,7 +13,11 @@ interface Props {
 }
 
 export default function Home({ homePage, menu, siteInfo }: Props) {
-    return <Page page={homePage} menu={menu} siteInfo={siteInfo} />;
+    return (
+        // <div className={`${quilin.variable} font-serif`}>
+        <Page page={homePage} menu={menu} siteInfo={siteInfo} />
+        // </div>
+    );
 }
 
 export async function getStaticProps() {

@@ -17,13 +17,48 @@
 }
 
 body {
+    font-size: 1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-quilin);
+    line-height: 1;
+}
+h1,
+h2 {
+    font-size: 5rem;
+}
+h3 {
+    font-size: 4rem;
+}
+h4 {
+    font-size: 3rem;
+}
+
+/* WordPress  */
+.aligncenter > img {
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright > img {
+    margin-left: auto;
 }
 
 .has-text-align-right {
     text-align: right;
 }
+.has-text-align-center {
+    text-align: center;
+}
 .has-large-font-size {
-    font-size: xx-large;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.has-x-large-font-size {
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
 .has-base-color {
     color: #fff;

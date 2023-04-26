@@ -1,10 +1,18 @@
+import { CSSObject } from "styled-components";
+
+type Alignment = "left" | "right" | "center";
 export interface WPBlock {
     attrs: {
         dimRatio?: number;
         id?: number;
         url?: string;
-        align?: string;
+        align?: Alignment;
         fontSize?: string;
+        mediaPosition?: Alignment;
+        textAlign?: Alignment;
+        style?: CSSObject;
+        level?: number;
+        className?: string;
     };
     blockName:
         | "core/paragraph"
@@ -13,12 +21,19 @@ export interface WPBlock {
         | "core/list"
         | "core/embed"
         | "core/cover"
-        | "core/media-text";
+        | "core/media-text"
+        | "core/columns"
+        | "core/column"
+        | "core/heading";
     innerBlocks: WPBlock[];
     innerContent: string[];
     innerHTML: string;
 }
 
+export interface BlockComponentProps {
+    block: WPBlock;
+    index: number;
+}
 interface WPMenuItem {
     title: string;
     url: string;

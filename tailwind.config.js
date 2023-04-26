@@ -5,12 +5,16 @@ module.exports = {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
+    safelist: ["grid-cols-2", "grid-cols-3", "max-w-2xl"],
     theme: {
         extend: {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+            },
+            fontFamily: {
+                serif: ["var(--font-quilin)"],
             },
             height: {
                 "10v": "10vh",

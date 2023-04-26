@@ -1,14 +1,13 @@
-import { WPBlock } from "@/types";
+import { BlockComponentProps, WPBlock } from "@/types";
 import MediaTextBlock from "./MediaTextBlock";
 import CoverBlock from "./CoverBlock";
 import ParagraphBlock from "./ParagraphBlock";
+import ColumnsBlock from "./ColumnsBlock";
+import ColumnBlock from "./ColumnBlock";
+import ImageBlock from "./ImageBlock";
+import HeadingBlock from "./HeadingBlock";
 
-interface Props {
-    block: WPBlock;
-    index: number;
-}
-
-export default function Block({ block, index }: Props) {
+export default function Block({ block, index }: BlockComponentProps) {
     switch (block.blockName) {
         case "core/cover": {
             return <CoverBlock block={block} index={index} />;
@@ -17,7 +16,7 @@ export default function Block({ block, index }: Props) {
             return <>embed</>;
         }
         case "core/image": {
-            return <>image</>;
+            return <ImageBlock block={block} index={index} />;
         }
         case "core/list": {
             return <>list</>;
@@ -30,6 +29,18 @@ export default function Block({ block, index }: Props) {
         }
         case "core/media-text": {
             return <MediaTextBlock block={block} index={index} />;
+        }
+        case "core/columns": {
+            return <ColumnsBlock block={block} index={index} />;
+        }
+        case "core/column": {
+            return <ColumnBlock block={block} index={index} />;
+        }
+        case "core/heading": {
+            return <HeadingBlock block={block} index={index} />;
+        }
+        default: {
+            console.info(`block definition not found: ${block.blockName}`);
         }
     }
 }

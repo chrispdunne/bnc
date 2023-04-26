@@ -1,16 +1,16 @@
-import { WPBlock } from "@/types";
+import { BlockComponentProps, WPBlock } from "@/types";
 import { mapInnerBlocks, mapInnerContent } from "@/utils/block";
 
-interface Props {
-    block: WPBlock;
-    index: number;
-}
-
-export default function MediaTextBlock({ block, index }: Props) {
+export default function MediaTextBlock({ block, index }: BlockComponentProps) {
+    const { mediaPosition } = block.attrs;
     return (
-        <>
+        <div
+            className={`max-w-5xl py-8 mx-auto items-center flex${
+                mediaPosition === "right" ? " flex-row-reverse" : ""
+            }`}
+        >
             {mapInnerContent(block.innerContent)}
             {mapInnerBlocks(index, block.innerBlocks)}
-        </>
+        </div>
     );
 }
