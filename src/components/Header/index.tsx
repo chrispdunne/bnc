@@ -1,5 +1,6 @@
 import { SiteInfo, WPMenu } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
     menu: WPMenu;
@@ -9,21 +10,23 @@ interface Props {
 export default function Header({ menu, siteInfo }: Props) {
     return (
         <header className={`flex items-center justify-between p-4`}>
-            <Image
-                src={siteInfo.logo}
-                alt={siteInfo.siteName}
-                width={300}
-                height={108}
-            />
+            <Link href="/">
+                <Image
+                    src="/logo.jpg"
+                    alt={siteInfo.siteName}
+                    width={300}
+                    height={108}
+                />
+            </Link>
             <nav>
                 {menu.items?.map((item) => (
-                    <a
+                    <Link
                         className="uppercase text-sm font-semibold px-3"
                         key={item.title}
                         href={item.url}
                     >
                         {item.title}
-                    </a>
+                    </Link>
                 ))}
             </nav>
         </header>

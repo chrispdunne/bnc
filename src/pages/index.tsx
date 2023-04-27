@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function Home({ homePage, menu, siteInfo }: Props) {
-    console.log({ homePage });
     return <Page page={homePage} menu={menu} siteInfo={siteInfo} />;
 }
 
