@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { SiteInfo, WPBlock, WPMenu } from "@/types";
 import localFont from "next/font/local";
+import { ReactNode } from "react";
 
 const quilin = localFont({ src: "./quilin.woff2", variable: "--font-quilin" });
 interface Props {
@@ -11,21 +12,23 @@ interface Props {
     };
     menu: WPMenu;
     siteInfo: SiteInfo;
+    children?: ReactNode;
 }
 
-export default function Page({ page, menu, siteInfo }: Props) {
+export default function Page({ page, menu, siteInfo, children }: Props) {
     return (
         <>
             <Header siteInfo={siteInfo} menu={menu} />
 
             <main
-                className={`flex min-h-screen flex-col items-center justify-between ${quilin.variable} `}
+                className={`flex min-h-screen flex-col items-center  ${quilin.variable} `}
             >
                 {page?.blocks
                     ?.filter((block: WPBlock) => block.blockName != null)
                     ?.map((block: WPBlock, i: number) => (
                         <Block index={i} key={i} block={block} />
                     ))}
+                {children}
             </main>
             <Footer />
         </>

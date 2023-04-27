@@ -2,21 +2,26 @@ import Page from "@/components/Page";
 import { SiteInfo, WPBlock, WPMenu } from "@/types";
 
 interface Props {
-    homePage: {
+    whatToExpectPage: {
         blocks: WPBlock[];
     };
     menu: WPMenu;
     siteInfo: SiteInfo;
 }
 
-export default function Home({ homePage, menu, siteInfo }: Props) {
-    console.log({ homePage });
-    return <Page page={homePage} menu={menu} siteInfo={siteInfo} />;
+export default function WhatToExpect({
+    whatToExpectPage,
+    menu,
+    siteInfo,
+}: Props) {
+    return <Page page={whatToExpectPage} menu={menu} siteInfo={siteInfo} />;
 }
 
 export async function getStaticProps() {
-    const homePageRes = await fetch(process.env.REST_API_URL + "/page/home");
-    const homePage = await homePageRes.json();
+    const whatToExpectPageRes = await fetch(
+        process.env.REST_API_URL + "/page/what-to-expect"
+    );
+    const whatToExpectPage = await whatToExpectPageRes.json();
 
     const menuRes = await fetch(process.env.REST_API_URL + "/menus/header");
     const menu = await menuRes.json();
@@ -26,7 +31,7 @@ export async function getStaticProps() {
 
     return {
         props: {
-            homePage,
+            whatToExpectPage,
             menu,
             siteInfo,
         },

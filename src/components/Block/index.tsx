@@ -41,6 +41,7 @@ export default function Block({ block, index }: BlockComponentProps) {
         }
         default: {
             console.info(`block definition not found: ${block.blockName}`);
+            return null;
         }
     }
 }
