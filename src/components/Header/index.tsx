@@ -1,6 +1,9 @@
 import { SiteInfo, WPMenu } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import MobileButton from "../Buttons/MobileButton";
+import { useState } from "react";
+import HeaderNav from "./HeaderNav";
 
 interface Props {
     menu: WPMenu;
@@ -8,6 +11,7 @@ interface Props {
 }
 
 export default function Header({ menu, siteInfo }: Props) {
+    const [mobileNavActive, setMobileNavActive] = useState(false);
     return (
         <header className={`flex items-center justify-between p-4`}>
             <Link href="/">
@@ -18,17 +22,11 @@ export default function Header({ menu, siteInfo }: Props) {
                     height={108}
                 />
             </Link>
-            <nav>
-                {menu.items?.map((item) => (
-                    <Link
-                        className="uppercase text-sm font-semibold px-3"
-                        key={item.title}
-                        href={item.url}
-                    >
-                        {item.title}
-                    </Link>
-                ))}
-            </nav>
+            <MobileButton
+                mobileNavActive={mobileNavActive}
+                setMobileNavActive={setMobileNavActive}
+            />
+            <HeaderNav menu={menu} active={mobileNavActive} />
         </header>
     );
 }
