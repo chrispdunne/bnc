@@ -9,15 +9,15 @@ interface Props {
         tite: string;
         seo: Record<string, string | null>;
     };
-    yoastSeo: Record<string, string | null>;
+    // yoastSeo: Record<string, string | null>;
     menu: WPMenu;
     siteInfo: SiteInfo;
 }
 
-export default function Home({ homePage, menu, siteInfo, yoastSeo }: Props) {
+export default function Home({ homePage, menu, siteInfo }: Props) {
     return (
         <>
-            <SeoHead seo={homePage.seo} yoastSeo={yoastSeo} />
+            <SeoHead seo={homePage.seo} />
             <Page page={homePage} menu={menu} siteInfo={siteInfo} />
         </>
     );
@@ -34,17 +34,17 @@ export async function getStaticProps() {
     const siteInfoRes = await fetch(REST_API_URL + "/site-info");
     const siteInfo = await siteInfoRes.json();
 
-    const yoastSeoRes = await fetch(
-        `${NEXT_PUBLIC_CMS_URL}/wp-json/yoast/v1/get_head?url=${NEXT_PUBLIC_CMS_URL}/`
-    );
-    const yoastSeo = await yoastSeoRes.json();
+    // const yoastSeoRes = await fetch(
+    //     `${NEXT_PUBLIC_CMS_URL}/wp-json/yoast/v1/get_head?url=${NEXT_PUBLIC_CMS_URL}/`
+    // );
+    // const yoastSeo = await yoastSeoRes.json();
 
     return {
         props: {
             homePage,
             menu,
             siteInfo,
-            yoastSeo,
+            // yoastSeo,
         },
     };
 }

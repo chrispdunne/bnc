@@ -3,12 +3,12 @@ import getSchemaObject from "./schema";
 
 export default function SeoHead({
     seo,
-    yoastSeo,
-}: {
+}: // yoastSeo,
+{
     seo: Record<string, string | null>;
-    yoastSeo: Record<string, string | null>;
+    // yoastSeo: Record<string, string | null>;
 }) {
-    console.log({ seo, yoastSeo });
+    // console.log({ seo });
     const testSchema = getSchemaObject();
     // const yoastSchema = yoastSeo.
     // @TODO screen readers?
