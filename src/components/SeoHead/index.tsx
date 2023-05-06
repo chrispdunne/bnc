@@ -12,13 +12,13 @@ export default function SeoHead({
     const testSchema = getSchemaObject();
     // const yoastSchema = yoastSeo.
     // @TODO screen readers?
-    const title = `${seo.breadcrumb_title} | ${process.env.NEXT_PUBLIC_SITENAME}`;
-    const description = seo.description ?? "";
+    const title = `${seo?.breadcrumb_title} | ${process.env.NEXT_PUBLIC_SITENAME}`;
+    const description = seo?.description ?? "";
     const url = seo?.permalink?.replace(
         process.env.NEXT_PUBLIC_CMS_URL ?? "",
         process.env.NEXT_PUBLIC_FRONTEND_URL ?? ""
     );
-    const ogImgUrl: string = seo.open_graph_image ?? "";
+    const ogImgUrl: string = seo?.open_graph_image ?? "";
     return (
         <Head>
             <meta charSet="UTF-8" />
@@ -52,14 +52,14 @@ export default function SeoHead({
             />
             <meta
                 property="article:modified_time"
-                content={seo.object_last_modified ?? ""}
+                content={seo?.object_last_modified ?? ""}
             />
 
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:label1" content="Est. reading time" />
             <meta
                 name="twitter:data1"
-                content={`${seo.estimated_reading_time_minutes} minutes`}
+                content={`${seo?.estimated_reading_time_minutes} minutes`}
             />
 
             <script type="application/ld+json">
