@@ -1,0 +1,78 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "http://bnc.local/",
+            "url": "http://bnc.local/",
+            "name": "Home - Becky Netley Counselling",
+            "isPartOf": { "@id": "http://bnc.local/#website" },
+            "about": { "@id": "http://bnc.local/#organization" },
+            "primaryImageOfPage": { "@id": "http://bnc.local/#primaryimage" },
+            "image": { "@id": "http://bnc.local/#primaryimage" },
+            "thumbnailUrl": "http://bnc.local/wp-content/uploads/2023/04/DP-784x1024.jpeg",
+            "datePublished": "2023-04-23T13:12:23+00:00",
+            "dateModified": "2023-04-30T19:03:31+00:00",
+            "description": "BACP registered humanistic counsellor with experience working in the NHS with depression,anxiety,bereavement,self harm,suicidal ideation",
+            "breadcrumb": { "@id": "http://bnc.local/#breadcrumb" },
+            "inLanguage": "en-US",
+            "potentialAction": [
+                { "@type": "ReadAction", "target": ["http://bnc.local/"] }
+            ]
+        },
+        {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "http://bnc.local/#primaryimage",
+            "url": "http://bnc.local/wp-content/uploads/2023/04/DP-784x1024.jpeg",
+            "contentUrl": "http://bnc.local/wp-content/uploads/2023/04/DP-784x1024.jpeg"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "http://bnc.local/#breadcrumb",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home" }
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "http://bnc.local/#website",
+            "url": "http://bnc.local/",
+            "name": "Becky Netley Counselling",
+            "description": "Humanistic Counselling in Brighton &amp; Hove",
+            "publisher": { "@id": "http://bnc.local/#organization" },
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "http://bnc.local/?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            ],
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "Organization",
+            "@id": "http://bnc.local/#organization",
+            "name": "Becky Netley Counselling",
+            "url": "http://bnc.local/",
+            "logo": {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "http://bnc.local/#/schema/logo/image/",
+                "url": "http://bnc.local/wp-content/uploads/2023/04/bnc-logo.jpeg",
+                "contentUrl": "http://bnc.local/wp-content/uploads/2023/04/bnc-logo.jpeg",
+                "width": 1530,
+                "height": 551,
+                "caption": "Becky Netley Counselling"
+            },
+            "image": { "@id": "http://bnc.local/#/schema/logo/image/" },
+            "sameAs": [
+                "https://facebook.com/bncounsellinguk",
+                "https://www.instagram.com/bn.counselling"
+            ]
+        }
+    ]
+}

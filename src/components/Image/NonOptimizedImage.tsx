@@ -1,4 +1,3 @@
-import Image from "next/image";
 import BlurEffect from "./BlurEffect";
 
 export default function NonOptimizedImage({

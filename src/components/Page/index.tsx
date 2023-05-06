@@ -21,7 +21,7 @@ export default function Page({ page, menu, siteInfo, children }: Props) {
             <Header siteInfo={siteInfo} menu={menu} />
 
             <main
-                className={`flex min-h-screen flex-col items-center  ${quilin.variable} `}
+                className={`flex min-h-screen flex-col items-center ${quilin.variable} `}
             >
                 {page?.blocks
                     ?.filter((block: WPBlock) => block.blockName != null)

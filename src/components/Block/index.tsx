@@ -6,6 +6,8 @@ import ColumnsBlock from "./ColumnsBlock";
 import ColumnBlock from "./ColumnBlock";
 import ImageBlock from "./ImageBlock";
 import HeadingBlock from "./HeadingBlock";
+import SpacerBlock from "./SpacerBlock";
+import HtmlBlock from "./HtmlBlock";
 
 export default function Block({ block, index }: BlockComponentProps) {
     switch (block.blockName) {
@@ -39,6 +41,13 @@ export default function Block({ block, index }: BlockComponentProps) {
         case "core/heading": {
             return <HeadingBlock block={block} index={index} />;
         }
+        case "core/spacer": {
+            return <SpacerBlock block={block} index={index} />;
+        }
+        case "core/html": {
+            return <HtmlBlock block={block} index={index} />;
+        }
+
         default: {
             console.info(`block definition not found: ${block.blockName}`);
             return null;

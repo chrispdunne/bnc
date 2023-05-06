@@ -35,14 +35,17 @@ export default function ContactForm() {
 
         let res;
         try {
-            res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recaptcha`, {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: searchParams,
-            });
+            res = await fetch(
+                `${process.env.NEXT_PUBLIC_CMS_URL}/api/recaptcha`,
+                {
+                    method: "POST",
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: searchParams,
+                }
+            );
         } catch (e) {
             console.error(e);
             setIsSending(false);
@@ -70,7 +73,12 @@ export default function ContactForm() {
     };
 
     return (
-        <form method="POST" id="contact" onSubmit={handleOnSubmit}>
+        <form
+            method="POST"
+            id="contact"
+            onSubmit={handleOnSubmit}
+            className="my-12"
+        >
             <label htmlFor="firstName" className="firstName">
                 First Name
                 <input

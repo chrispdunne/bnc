@@ -9,7 +9,7 @@ export default function CoverBlock({ block, index }: BlockComponentProps) {
     const shouldOptimizeImage = !(attrs.className === "non-opt");
 
     return (
-        <div className="w-full h-50v min-h-min flex flex-col justify-center relative">
+        <div className="w-full py-12 min-h-min flex flex-col justify-center relative md:h-50v md:py-2">
             <div className="max-w-5xl w-full z-10 mx-auto">
                 {mapInnerBlocks(index, innerBlocks)}
             </div>

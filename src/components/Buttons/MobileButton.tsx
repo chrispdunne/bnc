@@ -9,7 +9,7 @@ export default function MobileButton({
 }: Props) {
     return (
         <button
-            className="z-10 fixed top-10 right-5  md:hidden  "
+            className="z-30 fixed top-10 right-5  md:hidden  "
             onClick={() => setMobileNavActive(!mobileNavActive)}
         >
             <i className={`toggle ${mobileNavActive ? "close" : "open"}`}>

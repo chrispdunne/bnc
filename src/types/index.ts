@@ -13,6 +13,7 @@ export interface WPBlock {
         style?: CSSObject;
         level?: number;
         className?: string;
+        height?: string;
     };
     blockName:
         | "core/paragraph"
@@ -24,7 +25,9 @@ export interface WPBlock {
         | "core/media-text"
         | "core/columns"
         | "core/column"
-        | "core/heading";
+        | "core/heading"
+        | "core/spacer"
+        | "core/html";
     innerBlocks: WPBlock[];
     innerContent: string[];
     innerHTML: string;
