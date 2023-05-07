@@ -15,6 +15,7 @@ interface Props {
 }
 
 export default function Home({ homePage, menu, siteInfo }: Props) {
+    console.log({ homePage });
     return (
         <>
             <SeoHead seo={homePage.seo} />
