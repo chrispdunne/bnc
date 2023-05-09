@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default function Home({ homePage, menu, siteInfo }: Props) {
-    console.log({ homePage });
+    // console.log({ homePage });
     return (
         <>
             <SeoHead seo={homePage.seo} />
@@ -39,7 +39,7 @@ export async function getStaticProps() {
     //     `${NEXT_PUBLIC_CMS_URL}/wp-json/yoast/v1/get_head?url=${NEXT_PUBLIC_CMS_URL}/`
     // );
     // const yoastSeo = await yoastSeoRes.json();
-
+    console.log(REST_API_URL + "/page/home");
     return {
         props: {
             homePage,

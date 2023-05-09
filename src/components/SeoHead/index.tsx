@@ -8,7 +8,7 @@ export default function SeoHead({
     seo: Record<string, string | null>;
     // yoastSeo: Record<string, string | null>;
 }) {
-    console.log({ seo });
+    // console.log({ seo });
     const testSchema = getSchemaObject();
     // const yoastSchema = yoastSeo.
     // @TODO screen readers?
