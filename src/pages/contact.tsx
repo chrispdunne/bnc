@@ -1,11 +1,13 @@
 import ContactForm from "@/components/ContactForm";
 import Page from "@/components/Page";
+import SeoHead from "@/components/SeoHead";
 import { SiteInfo, WPBlock, WPMenu } from "@/types";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 interface Props {
     contactPage: {
         blocks: WPBlock[];
+        seo: Record<string, string | null>;
     };
     menu: WPMenu;
     siteInfo: SiteInfo;
@@ -16,6 +18,8 @@ export default function Contact({ contactPage, menu, siteInfo }: Props) {
         <ReCaptchaProvider
             reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         >
+            <SeoHead seo={contactPage.seo} />
+
             <Page page={contactPage} menu={menu} siteInfo={siteInfo}>
                 <ContactForm />
             </Page>

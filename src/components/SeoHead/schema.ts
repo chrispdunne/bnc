@@ -84,6 +84,13 @@ export default function getSchemaObject() {
                 name: `${siteName}`,
                 url: `${siteUrl}/`,
                 telephone: "0800 000 000",
+                address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Brighton & Hove",
+                    addressRegion: "East Sussex",
+                    postalCode: "BN3 2BB",
+                    streetAddress: "Hove Therapy Rooms, 69 Church Rd",
+                },
                 priceRange: "££",
                 logo: {
                     "@type": "ImageObject",

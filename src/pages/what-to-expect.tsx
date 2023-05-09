@@ -1,9 +1,11 @@
 import Page from "@/components/Page";
+import SeoHead from "@/components/SeoHead";
 import { SiteInfo, WPBlock, WPMenu } from "@/types";
 
 interface Props {
     whatToExpectPage: {
         blocks: WPBlock[];
+        seo: Record<string, string | null>;
     };
     menu: WPMenu;
     siteInfo: SiteInfo;
@@ -14,7 +16,12 @@ export default function WhatToExpect({
     menu,
     siteInfo,
 }: Props) {
-    return <Page page={whatToExpectPage} menu={menu} siteInfo={siteInfo} />;
+    return (
+        <>
+            <SeoHead seo={whatToExpectPage.seo} />
+            <Page page={whatToExpectPage} menu={menu} siteInfo={siteInfo} />
+        </>
+    );
 }
 
 export async function getStaticProps() {

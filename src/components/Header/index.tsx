@@ -16,6 +16,7 @@ export default function Header({ menu, siteInfo }: Props) {
         <header className={`flex items-center justify-between p-4`}>
             <Link href="/">
                 <Image
+                    className="w-52 mt-2 md:w-auto md:mt-0"
                     src="/logo.jpg"
                     alt={siteInfo.siteName}
                     width={300}

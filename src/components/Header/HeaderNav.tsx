@@ -18,14 +18,14 @@ export default function HeaderNav({
         <nav
             className={`
 ${active ? "active" : ""}
--right-full z-20 flex flex-col w-5/6 bg-white fixed h-screen top-0 text-right justify-center drop-shadow-2xl	
+-right-full z-20 flex flex-col w-11/12 bg-white fixed h-screen top-0 text-right justify-center drop-shadow-2xl	
 md:right-0 md:flex-row md:bg-transparent md:static md:h-auto md:w-auto`}
         >
             {menu.items?.map((item) => (
                 <Link
                     className={`
         ${removeSlashes(pathname) === removeSlashes(item.url) ? "active" : ""}
-        text-5xl uppercase font-semibold leading-relaxed pr-8
+        text-3xl uppercase font-semibold leading-tight pr-8 my-4
         md:text-sm  md:px-3
         `}
                     key={item.title}
