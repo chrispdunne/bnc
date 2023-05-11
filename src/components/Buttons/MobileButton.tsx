@@ -9,6 +9,11 @@ export default function MobileButton({
 }: Props) {
     return (
         <button
+            aria-label={
+                mobileNavActive
+                    ? "hide site navigation"
+                    : "show site navigation"
+            }
             className="z-30 fixed top-12 right-8 md:hidden"
             onClick={() => setMobileNavActive(!mobileNavActive)}
         >
