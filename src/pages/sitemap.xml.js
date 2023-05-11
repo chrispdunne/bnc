@@ -7,8 +7,12 @@ function generateSiteMap() {
         <url>
             <loc>${process.env.NEXT_PUBLIC_FRONTEND_URL}/</loc>
             <lastmod>${todayISO}</lastmod>
+        </url>
+        <url>
             <loc>${process.env.NEXT_PUBLIC_FRONTEND_URL}/what-to-expect</loc>
             <lastmod>${todayISO}</lastmod>
+        </url>
+        <url>
             <loc>${process.env.NEXT_PUBLIC_FRONTEND_URL}/contact</loc>
             <lastmod>${todayISO}</lastmod>
         </url> 

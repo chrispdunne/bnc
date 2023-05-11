@@ -1,7 +1,15 @@
 import { BlockComponentProps } from "@/types";
+import styled from "styled-components";
+
+const Container = styled.div`
+    iframe {
+        width: 100%;
+        max-width: 600px;
+    }
+`;
 
 export default function HtmlBlock({
     block: { innerHTML },
 }: BlockComponentProps) {
-    return <div dangerouslySetInnerHTML={{ __html: innerHTML }} />;
+    return <Container dangerouslySetInnerHTML={{ __html: innerHTML }} />;
 }
