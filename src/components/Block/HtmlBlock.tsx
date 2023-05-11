@@ -6,6 +6,7 @@ const Container = styled.div`
     iframe {
         width: 100%;
         max-width: 600px;
+        margin: auto;
     }
 `;
 
