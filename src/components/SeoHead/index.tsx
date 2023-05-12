@@ -1,6 +1,5 @@
 import Head from "next/head";
 import getSchemaObject from "./schema";
-import { getGaSnippet } from "@/utils/ga";
 
 export default function SeoHead({
     seo,
@@ -66,7 +65,6 @@ export default function SeoHead({
             <script type="application/ld+json">
                 {JSON.stringify(getSchemaObject())}
             </script>
-            {getGaSnippet()}
         </Head>
     );
 }
