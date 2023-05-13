@@ -19,6 +19,13 @@ export default function SeoHead({
         process.env.NEXT_PUBLIC_FRONTEND_URL ?? ""
     );
     const ogImgUrl: string = seo?.open_graph_image ?? "";
+
+    const schemaObject = JSON.stringify(getSchemaObject());
+
+    //   const mySchema = JSON.stringify(object);
+    function makeJSONLD() {
+        return { __html: schemaObject };
+    }
     return (
         <Head>
             <meta charSet="UTF-8" />
@@ -62,9 +69,10 @@ export default function SeoHead({
                 content={`${seo?.estimated_reading_time_minutes} minutes`}
             />
 
-            <script type="application/ld+json">
-                {JSON.stringify(getSchemaObject())}
-            </script>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={makeJSONLD()}
+            />
         </Head>
     );
 }
