@@ -1,9 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import Cors from "cors";
+import { runMiddleware } from "@/utils/middleware";
+
+const cors = Cors({
+    methods: ["GET"],
+    origin: process.env.ALLOWED_ORIGINS?.split(" "),
+});
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
+    await runMiddleware(req, res, cors);
+
     // Check for secret to confirm this is a valid request
     if (!req.query?.secret) {
         return res.status(401).json({ message: "No token provided" });
@@ -21,6 +30,7 @@ export default async function handler(
             } else {
                 await res.revalidate(`/${pagePath}`);
             }
+
             return res.json({ revalidated: pagePath });
         } catch (err) {
             // If there was an error, Next.js will continue
