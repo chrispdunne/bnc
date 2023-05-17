@@ -4,7 +4,7 @@ import { runMiddleware } from "@/utils/middleware";
 
 const cors = Cors({
     methods: ["GET", "OPTIONS", "HEAD", "POST"],
-    origin: process.env.NEXT_PUBLIC_ALLOWED_ORIGINS?.split(" "),
+    origin: process.env.NEXT_PUBLIC_ALLOWED_ORIGINS!.split(" "),
 });
 
 export default async function handler(
