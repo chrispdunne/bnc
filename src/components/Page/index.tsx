@@ -30,7 +30,7 @@ export default function Page({ page, menu, siteInfo, children }: Props) {
             gtag('js', new Date());
             gtag('config', 'G-B12TGX1DDT')`}
             </Script>
-            ;
+
             <Header siteInfo={siteInfo} menu={menu} />
             <main
                 className={`flex min-h-screen flex-col items-center ${quilin.variable} `}
