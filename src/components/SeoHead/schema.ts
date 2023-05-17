@@ -83,7 +83,7 @@ export default function getSchemaObject() {
                 "@id": `${siteUrl}/#localbusiness`,
                 name: `${siteName}`,
                 url: `${siteUrl}/`,
-                telephone: "0800 000 000",
+                telephone: "07774 716 734",
                 address: {
                     "@type": "PostalAddress",
                     addressLocality: "Brighton & Hove",
