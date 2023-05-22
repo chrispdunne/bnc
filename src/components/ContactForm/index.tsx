@@ -1,3 +1,4 @@
+import { getTransitionDirection } from "antd/lib/_util/motion";
 import { useReCaptcha } from "next-recaptcha-v3";
 import { FormEvent, useState } from "react";
 
@@ -55,19 +56,30 @@ export default function ContactForm() {
         if (res?.ok) {
             const raw = await res.json();
             const response = await JSON.parse(raw);
-            // console.log(response.success, response.score > 0.5, response.success);
             if (response.success && response.score > 0.5) {
                 // not a bot
                 setFormMsg("Message sent successfully. Thanks!");
+
+                gtag("event", "form_submit_success", {
+                    screen_name: "contact_page",
+                    message: "message sent successfully",
+                });
             } else {
                 // maybe a bot
                 setFormMsg("Error 202: msg not sent");
+                gtag("event", "form_submit_failure", {
+                    screen_name: "contact_page",
+                    message: "message not sent - error 202",
+                });
             }
             setIsSending(false);
         } else {
             setIsSending(false);
             setFormMsg("Error 303: msg not sent");
-
+            gtag("event", "form_submit_failure", {
+                screen_name: "contact_page",
+                message: "message not sent - error 303",
+            });
             return;
         }
     };
