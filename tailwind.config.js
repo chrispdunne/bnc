@@ -10,6 +10,7 @@ module.exports = {
         "text-left",
         "text-center",
         "text-right",
+        "md:text-left",
         "md:text-right",
         "grid-cols-2",
         "grid-cols-3",
