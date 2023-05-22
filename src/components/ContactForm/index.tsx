@@ -1,5 +1,5 @@
 import { useReCaptcha } from "next-recaptcha-v3";
-import { FormEvent, useCallback, useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function ContactForm() {
     const { executeRecaptcha } = useReCaptcha();

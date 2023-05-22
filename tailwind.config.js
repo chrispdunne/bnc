@@ -15,6 +15,8 @@ module.exports = {
         "max-w-2xl",
         "mt-8",
         "md:mt-0",
+        "justify-start",
+        "justify-end",
     ],
     theme: {
         extend: {

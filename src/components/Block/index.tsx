@@ -8,6 +8,8 @@ import ImageBlock from "./ImageBlock";
 import HeadingBlock from "./HeadingBlock";
 import SpacerBlock from "./SpacerBlock";
 import HtmlBlock from "./HtmlBlock";
+import ButtonsBlock from "./ButtonsBlock";
+import ButtonBlock from "./ButtonBlock";
 
 export default function Block({ block, index }: BlockComponentProps) {
     switch (block.blockName) {
@@ -47,7 +49,12 @@ export default function Block({ block, index }: BlockComponentProps) {
         case "core/html": {
             return <HtmlBlock block={block} index={index} />;
         }
-
+        case "core/buttons": {
+            return <ButtonsBlock block={block} index={index} />;
+        }
+        case "core/button": {
+            return <ButtonBlock block={block} index={index} />;
+        }
         default: {
             console.info(`block definition not found: ${block.blockName}`);
             return null;

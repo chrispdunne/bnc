@@ -6,6 +6,9 @@
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
+    --brand-blue: #1f4a5a;
+    --brand-blue-dark: #153741;
+    --brand-blue-light: #67b4cb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,8 +72,12 @@ nav a:after {
     position: absolute;
     width: 0;
     height: 1px;
-    background-color: #1f4a5a;
-    background: linear-gradient(-45deg, #1f4a5a, #67b4cb);
+    background-color: var(--brand-blue);
+    background: linear-gradient(
+        -45deg,
+        var(--brand-blue),
+        var(--brand-blue-light)
+    );
     bottom: -10px;
     left: 12px;
     transition: 0.2s ease-in-out;
@@ -136,8 +143,12 @@ nav.active {
 
 /* form */
 form#contact {
-    background-color: #1f4a5a;
-    background: linear-gradient(45deg, #1f4a5a, #153741);
+    background-color: var(--brand-blue);
+    background: linear-gradient(
+        45deg,
+        var(--brand-blue),
+        var(--brand-blue-dark)
+    );
     color: #fff;
     padding: 50px;
     max-width: 400px;
@@ -159,10 +170,14 @@ form textarea {
     max-width: initial;
     background: rgba(255, 255, 255, 1);
     display: block;
-    color: #1f4a5a;
+    color: var(--brand-blue);
 }
 form button[type="submit"] {
-    background: linear-gradient(-45deg, #1f4a5a, #153741);
+    background: linear-gradient(
+        -45deg,
+        var(--brand-blue),
+        var(--brand-blue-dark)
+    );
 
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 10px 10px 10px;
@@ -174,7 +189,7 @@ form button[type="submit"] {
 }
 form button[type="submit"]:hover {
     background: rgba(255, 255, 255, 1);
-    color: #1f4a5a;
+    color: var(--brand-blue);
 }
 form label.phone {
     display: none;
