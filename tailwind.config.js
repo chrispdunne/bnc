@@ -9,6 +9,7 @@ module.exports = {
         "flex-row-reverse",
         "text-left",
         "text-center",
+        "text-right",
         "md:text-right",
         "grid-cols-2",
         "grid-cols-3",
