@@ -10,6 +10,7 @@ import SpacerBlock from "./SpacerBlock";
 import HtmlBlock from "./HtmlBlock";
 import ButtonsBlock from "./ButtonsBlock";
 import ButtonBlock from "./ButtonBlock";
+import GalleryBlock from "./GalleryBlock";
 
 export default function Block({ block, index }: BlockComponentProps) {
     switch (block.blockName) {
@@ -54,6 +55,9 @@ export default function Block({ block, index }: BlockComponentProps) {
         }
         case "core/button": {
             return <ButtonBlock block={block} index={index} />;
+        }
+        case "core/gallery": {
+            return <GalleryBlock block={block} index={index} />;
         }
         default: {
             console.info(`block definition not found: ${block.blockName}`);

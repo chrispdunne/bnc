@@ -15,6 +15,7 @@ export interface WPBlock {
         className?: string;
         height?: string;
         layout?: Record<string, any>;
+        expandable?: boolean;
     };
     blockName:
         | "core/paragraph"
@@ -30,7 +31,8 @@ export interface WPBlock {
         | "core/spacer"
         | "core/html"
         | "core/buttons"
-        | "core/button";
+        | "core/button"
+        | "core/gallery";
 
     innerBlocks: WPBlock[];
     innerContent: string[];
