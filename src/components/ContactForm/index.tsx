@@ -66,6 +66,7 @@ export default function ContactForm() {
             } else {
                 // maybe a bot
                 setFormMsg("Error 202: msg not sent");
+                console.error("Error 202: msg not sent", response);
                 gtag("event", "form_submit_failure", {
                     screen_name: "contact_page",
                     message: "message not sent - error 202",

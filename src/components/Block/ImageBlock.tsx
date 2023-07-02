@@ -1,29 +1,6 @@
+import useClickOustide from "@/hooks/useClickOutside";
 import { BlockComponentProps } from "@/types";
-import {
-    MutableRefObject,
-    useCallback,
-    useEffect,
-    useRef,
-    useState,
-} from "react";
-
-const useClickOustide = (
-    ref: MutableRefObject<HTMLElement | null>,
-    onClickOutside: () => void
-) => {
-    useEffect(() => {
-        function handleClickOutside(event: any) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                onClickOutside();
-            }
-        }
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [onClickOutside, ref]);
-};
+import { useCallback, useRef, useState } from "react";
 
 export default function ImageBlock({ block }: BlockComponentProps) {
     const { expandable } = block.attrs;
